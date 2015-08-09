@@ -295,6 +295,7 @@ int Menu::Run_Menu(){
 string Menu::STR_Menu(string tital, vector<string> Options){
 	Menu_Type = 1;
 	Selected = 0;
+	Items.clear();
 	Tital = tital;
 	Items = Options;
 	Run_Menu();
@@ -302,6 +303,7 @@ string Menu::STR_Menu(string tital, vector<string> Options){
 }
 string Menu::STR_Menu_From_File(string File){
 	string Lines;
+	Items.clear();
 	ifstream Load(File.c_str());
 	if (Load.is_open()){
 		getline(Load, Tital);
